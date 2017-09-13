@@ -1,26 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "ContaBancaria.h"
+/*
+ContBank* abrirConta(int num, char* nome){ ContBank *cb = malloc(sizeof(ContBank));
+cb->numC = num;
+cb->nomeC = malloc((NOMEC_MAX_SIZE+1)*sizeof(char));
+ * strcpy(c->nomeC,nome;
+ * c->saldo = 0.0;
+ return c;
+ }
+*/
 
 void accountOpen(ContBank *cb){
+    //ContBank *cb = malloc(sizeof(ContBank));
+    //cb->numC = num;
+    //cb->nomeC = malloc((NOMEC_MAX_SIZE+1)*sizeof(char));
     cb->saldo = 0;
     printf("A conta foi criada com sucesso\nSeu nome é: %s\nNúmero da conta: %d\nSeu saldo é de: %2.0f", cb->nomeC, cb->numC, cb->saldo);
 }
-void launchCredit(ContBank *cb){
+void launchCredit(ContBank *cb){//(ContBank* cb, float valor)
     float credit;
-    printf("Informe um valor a ser creditado:");
+    printf("Informe um valor a ser creditado:");//Valor pego no main
     scanf("%f",&credit);
     cb->saldo = cb->saldo + credit;
 }
-void launchDebit(ContBank *cb){
+void launchDebit(ContBank *cb){//(ContBank* cb, float valor)
     float dedit;
-    printf("Informe um valor a ser debitado:");
+    printf("Informe um valor a ser debitado:");//Valor pego no main
     scanf("%f", &dedit);
     cb->saldo = cb->saldo - dedit;
 } 
 
-void showBalance(ContBank *cb){
-    printf("Nome: %s\nNúmero da conta: %d\nSaldo Atual: %2.2f", cb->nomeC, cb->numC, cb->saldo);
+void showBalance(ContBank *cb){//(ContBank cb)
+    printf("Nome: %s\nNúmero da conta: %d\nSaldo Atual: %2.2f", cb->nomeC, cb->numC, cb->saldo);//(cb.nomeC,cb.numC,cb.saldo)
     
 }
 
