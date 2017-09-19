@@ -63,11 +63,12 @@ int main(int argc, char** argv) {
 			printf("Erro, nao foi possivel abrir o arquivo\n");
 	else
 		while( (fscanf(arq,"%s\n", &ch1[n]))!=EOF && n < 10){
-			//printf("%s\n", ch1[n]);
+			printf("%s\n", ch1[n]);
                         n++;
                 }
 	
 	fclose(arq);
+        
         
 	return 0;
 
