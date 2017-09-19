@@ -40,6 +40,20 @@ int main(int argc, char** argv) {
         printf("Nome[%d] = %c", n, linha[n]);
     }
 */
+/*
+    char url[]="dados.txt",
+	     info[50];
+	FILE *arq;
+	
+	arq = fopen(url, "r");
+	if(arq == NULL)
+			printf("Erro, nao foi possivel abrir o arquivo\n");
+	else
+		while( (fgets(info, sizeof(info), arq))!=NULL )
+			printf("%s", info);
+	
+	fclose(arq);
+*/
     char url[]="nomes.txt",
 	     ch1[10][10];
 	FILE *arq;
@@ -49,12 +63,12 @@ int main(int argc, char** argv) {
 			printf("Erro, nao foi possivel abrir o arquivo\n");
 	else
 		while( (fscanf(arq,"%s\n", &ch1[n]))!=EOF && n < 10){
-			printf("%s\n", ch1[n]);
+			//printf("%s\n", ch1[n]);
                         n++;
                 }
 	
 	fclose(arq);
-	
+        
 	return 0;
 
 
