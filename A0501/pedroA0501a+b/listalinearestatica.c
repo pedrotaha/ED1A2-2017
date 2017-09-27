@@ -138,28 +138,25 @@ void showList(struct Lista l){
     }
 }
 // Parte do exercício b da lista A0501
-int find(struct Lista* l, char search){
+int find(struct Lista* l, char search, int data[]){
     int i, m = 0;
-    char data;
     if((i < 0) || (i > (l->n - 1))) { 
         printf("\nERRO ao encontrar o nó, a lista pode estar vazia ou o índice está fora dos limites.");       
     }
     else{
         for(i = 0; i < l->n; i++){
             if(l->elem[i] == search){
-                data = i;
+                data[m] = i;
+                m++;
             }
         }
     }
-    return data;
-    
+    return m;
 }
 
 struct Lista intercalate(struct Lista* l1, struct Lista* l2) {
     struct Lista result;
     startList(&result);
-    int capacidade = (l1->n - 1) + (l2->n - 1);
-    result.n = capacidade;
     int idx, idx1, idx2;
     for (idx = 0, idx1 = 0, idx2 = 0; idx1 < l1->n && idx2 < l2->n; idx = idx + 2) {
         insert(&result, idx, l1->elem[idx1]);
@@ -177,7 +174,6 @@ struct Lista intercalate(struct Lista* l1, struct Lista* l2) {
         idx++;
         idx2++;
     }
-    result.n = idx;
     return result;
 }
 

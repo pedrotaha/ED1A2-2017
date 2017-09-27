@@ -4,7 +4,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-#define MAX_ELEM 20
+#define MAX_ELEM 10
 #define POS_FINAL -1
  
 struct Lista{
@@ -22,7 +22,7 @@ void invert(struct Lista*);
 struct Lista subList(struct Lista, int, int);
 void insertOrder(struct Lista*, char);
 void showList(struct Lista);
-int find(struct Lista*, char);
+int find(struct Lista*, char, int[]);
 struct Lista intercalate(struct Lista*, struct Lista*);
 void ordemC(struct Lista*);
 void ordemD(struct Lista*);
