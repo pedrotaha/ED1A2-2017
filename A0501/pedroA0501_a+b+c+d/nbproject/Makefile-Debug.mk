@@ -57,11 +57,11 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pedroa0501a_b.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pedroa0501_a_b_c_d.exe
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pedroa0501a_b.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pedroa0501_a_b_c_d.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pedroa0501a_b ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pedroa0501_a_b_c_d ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/listalinearestatica.o: listalinearestatica.c
 	${MKDIR} -p ${OBJECTDIR}

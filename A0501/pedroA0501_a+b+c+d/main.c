@@ -115,6 +115,11 @@ int main(int argc, char** argv) {
     insert(&myList, POS_FINAL, 'A');
     palindromo(myList);
     
+    //Eliminar os elementos repetidos
+    printf("\n\nElimando os elementos repetidos da Lista 1:\n");
+    removeRepited(&myList);
+    showList(myList);
+    
     return (EXIT_SUCCESS);
 }
 

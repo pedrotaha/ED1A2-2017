@@ -27,6 +27,7 @@ struct Lista intercalate(struct Lista*, struct Lista*);
 void ordemC(struct Lista*);
 void ordemD(struct Lista*);
 void palindromo(struct Lista);
+void removeRepited(struct Lista*);
 
 #ifdef __cplusplus
 }

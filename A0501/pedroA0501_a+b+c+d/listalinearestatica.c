@@ -225,3 +225,13 @@ void palindromo(struct Lista l){
         printf("\n\nEsta Lista NÃO é um Palíndromo!!\n");
     }
 }
+
+void removeRepited(struct Lista* l){
+    for(int x = 0; x < l->n; x++){
+        for(int y = x + 1; y < l->n; y++){
+            if(l->elem[x] == l->elem[y]){
+                remover(l, y);
+            }
+        }
+    } 
+}
