@@ -1,0 +1,226 @@
+/*
+    int op, k, opl, p, opcd, h;
+    int data1[10], data2[10];
+    char valor;
+    struct Lista l1;
+    struct Lista l2;
+    struct Lista united;
+    struct Lista result1;
+    struct Lista result2;
+    struct Lista intercalated;
+    startList(&l1);
+    startList(&l2);
+    do{
+        printf("Selecione uma op��o:");
+        printf("\n1 - Iniciar Lista\n2 - Acessar\n3 - Alterar\n4 - Inserir\n5 - Remover"
+            "\n6 - Concatenar\n7 - Inverter\n8 - Criar Sublista\n9 - Inserir Ordenado\n"
+            "10 - Mostrar Lista\n11 - Localizar n�\n12 - Intercalar\n13 - Ordenar Lista\n14 - Sair\n");
+        scanf("%d", &op);
+        switch(op){
+            case 1:
+                printf("Escolha entre a lista 1 ou a 2:");
+                scanf("%d", &opl);
+                do{
+                    if(opl == 1){
+                        startList(&l1);
+                    }
+                    if(opl == 2){
+                        startList(&l2);
+                    }
+                }while(opl != 1 || opl != 2);
+                opl = 0;
+                break;
+            case 2:
+                printf("Digite a posi��o:");
+                scanf("%d", &k);
+                printf("Escolha entre a lista 1 ou a 2:");
+                scanf("%d", &opl);
+                do{
+                    if(opl == 1){
+                        access(l1, k);
+                    }
+                    if(opl == 2){
+                        access(l2, k);
+                    }
+                }while(opl != 1 || opl != 2);
+                opl = 0;
+                break;
+            case 3:
+                printf("Digite a posi��o:");
+                scanf("%d", &k);
+                printf("Digite o valor:");
+                scanf("%s", &valor);
+                printf("Escolha entre a lista 1 ou a 2:");
+                scanf("%d", &opl);
+                do{
+                    if(opl == 1){
+                        change(&l1, k, valor);
+                    }
+                    if(opl == 2){
+                        change(&l2, k, valor);
+                    }
+                }while(opl != 1 || opl != 2);
+                opl = 0;
+                break;
+            case 4:
+                printf("Digite o valor:");
+                scanf("%s", &valor);
+                printf("Escolha entre a lista 1 ou a 2:");
+                scanf("%d", &opl);
+                do{
+                    if(opl == 1){
+                        insert(&l1, POS_FINAL, valor);
+                        showList(l1);
+                    }
+                    if(opl == 2){
+                        insert(&l2, POS_FINAL, valor);
+                    }
+                }while(opl != 1 || opl != 2);
+                opl = 0;
+                break;
+            case 5:
+                printf("Digite a posi��o:");
+                scanf("%d", &k); 
+                printf("Escolha entre a lista 1 ou a 2:");
+                scanf("%d", &opl);
+                do{
+                    if(opl == 1){
+                        remover(&l1, k);
+                    }
+                    if(opl == 2){
+                        remover(&l2, k);
+                    }
+                }while(opl != 1 || opl != 2);
+                opl = 0;
+                break;
+            case 6:
+                unity(&l1, &l2);
+                showList(l1);
+                break;
+            case 7:
+                printf("Escolha entre a lista 1 ou a 2:");
+                scanf("%d", &opl);
+                do{
+                    if(opl == 1){
+                        invert(&l1);
+                    }
+                    if(opl == 2){
+                        invert(&l2);
+                    }
+                }while(opl != 1 || opl != 2);
+                opl = 0;
+                break;
+            case 8:
+                printf("Digite a partir de qual posi��o:");
+                scanf("%d", &k);
+                printf("Digite o n�mero de elementos:");
+                scanf("%d", &h);
+                printf("Escolha entre a lista 1 ou a 2:");
+                scanf("%d", &opl);
+                do{
+                    if(opl == 1){
+                        result1 = subList(l1, k, h);
+                        showList(result1);
+                    }
+                    if(opl == 2){
+                        result2 = subList(l2, k, h);
+                        showList(result2);
+                    }
+                }while(opl != 1 || opl != 2);
+                opl = 0;
+                break;
+            case 9:
+                printf("Digite o valor:");
+                scanf("%s", &valor);
+                printf("Escolha entre a lista 1 ou a 2:");
+                scanf("%d", &opl);
+                do{
+                    if(opl == 1){
+                        insertOrder(&l1, valor);
+                    }
+                    if(opl == 2){
+                        insertOrder(&l2, valor);
+                    }
+                }while(opl != 1 || opl != 2);
+                opl = 0;
+                break;
+            case 10:
+                printf("Escolha entre a lista 1 ou a 2:");
+                scanf("%d", &opl);
+                do{
+                    if(opl == 1){
+                        showList(l1);
+                    }
+                    if(opl == 2){
+                        showList(l2);
+                    }
+                }while(opl != 1 || opl != 2);
+                opl = 0;
+                break;
+            case 11:
+                printf("Digite o valor:");
+                scanf("%s", &valor);
+                printf("Escolha entre a lista 1 ou a 2:");
+                scanf("%d", &opl);
+                do{
+                    if(opl == 1){
+                        data1[MAX_ELEM] = find(&l1, valor);
+                        printf("O valor foi encontrado na(s) posi��o(�es):");
+                        for(p = 0; p < MAX_ELEM; p++){
+                            printf("\n%d", data1[p]);
+                        }
+                    }
+                    if(opl == 2){
+                        data2[MAX_ELEM] = find(&l2, valor);
+                        printf("O valor foi encontrado na(s) posi��o(�es):");
+                        for(p = 0; p < MAX_ELEM; p++){
+                            printf("\n%d", data2[p]);
+                        }
+                    }
+                }while(opl != 1 || opl != 2);
+                opl = 0;
+                break;
+            case 12:
+                intercalated = intercalate(&l1, &l2);
+                showList(intercalated);
+                break;
+            case 13:
+                printf("Escolha entre crescente(1) ou decrescente(2):");
+                scanf("%d", &opcd);
+                do{
+                    if(opcd == 1){
+                        printf("Escolha entre a lista 1 ou a 2:");
+                        scanf("%d", &opl);
+                        do{
+                            if(opl == 1){
+                                ordemC(&l1);
+                            }
+                            if(opl == 2){
+                                ordemC(&l2);
+                            }
+                        }while(opl != 1 || opl != 2);
+                    }
+                    if(opcd == 2){
+                        printf("Escolha entre a lista 1 ou a 2:");
+                        scanf("%d", &opl);
+                        do{
+                            if(opl == 1){
+                                ordemD(&l1);
+                            }
+                            if(opl == 2){
+                                ordemD(&l2);
+                            }
+                        }while(opl != 1 || opl != 2);
+                    }
+                }while(opcd != 1 || opcd != 2);
+                opl = 0;
+                break;
+            case 14:
+                return(EXIT_SUCCESS);
+            default:
+                printf("Comando inv�lido.");
+                break;
+        }
+    }while(op != 14);
+*/
+//Nothing works.
