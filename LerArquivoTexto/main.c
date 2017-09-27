@@ -54,22 +54,19 @@ int main(int argc, char** argv) {
 	
 	fclose(arq);
 */
-    char url[]="nomes.txt", ch1[10][10];
+    char url[]="nomes.txt", ch1[10][10]; // linha[256]
 	FILE *arq;
 	int n = 0;
 	arq = fopen(url, "r");
 	if(arq == NULL)
             printf("Erro, nao foi possivel abrir o arquivo\n");
 	else
-            while( (fscanf(arq,"%s\n", &ch1[n]))!=EOF && n < 10){
-                printf("%s\n", ch1[n]);
+            while( (fscanf(arq,"%s\n", &ch1[n]))!=EOF && n < 10){// tirar "&& n < 10" tirar [n]
+                printf("%s\n", ch1[n]);//linha - sem o [n]
                 n++;
-            }
+            }//printf(">>>>>>>>>>>>Foram lidas %d linhas do arquivo!<<<<<<<<<<<<<", n);
 	fclose(arq); 
         
-	return 0;
-
-
     return (EXIT_SUCCESS);
 }
 
