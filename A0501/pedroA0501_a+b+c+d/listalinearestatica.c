@@ -140,7 +140,7 @@ void showList(struct Lista l){
 // Parte do exercício b da lista A0501
 int find(struct Lista* l, char search, int data[]){
     int i, m = 0;
-    if((i < 0) || (i > (l->n - 1))) { 
+    if(l->n == 0) { 
         printf("\nERRO ao encontrar o nó, a lista pode estar vazia ou o índice está fora dos limites.");       
     }
     else{
@@ -178,7 +178,6 @@ struct Lista intercalate(struct Lista* l1, struct Lista* l2) {
 }
 
 void ordemC(struct Lista* l){
-    int i;
     char aux;
     for(int x = 0; x < l->n; x++){
         for(int y = x + 1; y < l->n; y++){
@@ -192,7 +191,6 @@ void ordemC(struct Lista* l){
 }
 
 void ordemD(struct Lista* l){
-    int i;
     char aux;
     for(int x = 0; x < l->n; x++){
         for(int y = x + 1; y < l->n; y++){
