@@ -49,6 +49,31 @@ int main(int argc, char** argv) {
     listarElementos(minhaPilha);
     backup = obterTopo(minhaPilha);
     printf("\n\nElemento no topo: %c", backup);//Pegando o elemento no topo
+    palindromo(minhaPilha);//Testando palíndromo
+    iniciarPilha(&minhaPilha);
+    inserir(&minhaPilha, 'A'); 
+    inserir(&minhaPilha, 'R'); 
+    inserir(&minhaPilha, 'A'); 
+    inserir(&minhaPilha, 'R'); 
+    inserir(&minhaPilha, 'A'); 
+    listarElementos(minhaPilha);
+    palindromo(minhaPilha);
+    iniciarPilha(&minhaPilha);
+    inserir(&minhaPilha, 'O');
+    inserir(&minhaPilha, 'V');
+    inserir(&minhaPilha, 'O');
+    listarElementos(minhaPilha);
+    palindromo(minhaPilha);
+    printf("\n\nTeste com o sistema de Pilha(POP and PUSH):\n");
+    pilhaPalindromo(minhaPilha);
+    iniciarPilha(&minhaPilha);
+    inserir(&minhaPilha, 'A'); 
+    inserir(&minhaPilha, 'B'); 
+    inserir(&minhaPilha, 'C'); 
+    inserir(&minhaPilha, 'D'); 
+    inserir(&minhaPilha, 'E'); 
+    listarElementos(minhaPilha);
+    pilhaPalindromo(minhaPilha);
 
     return (EXIT_SUCCESS);
 }

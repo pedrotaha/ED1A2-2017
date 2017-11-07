@@ -20,10 +20,10 @@ int cheia(struct Pilha p){
     }
 }
 void iniciarPilha(struct Pilha* p){
-    p->topo = PILHA_VAZIA;
-    for(int i = p->topo; i >= 0; i--){
+    for(int i = MAX_ELEM; i >= 0; i--){
         p->elem[i] = 0;
     }
+    p->topo = PILHA_VAZIA;
 }
 char obterTopo(struct Pilha p){
     if(vazia(p)){
@@ -65,5 +65,53 @@ char remover(struct Pilha* p){
         p->elem[p->topo] = 0;
         p->topo--;
         return backup;
+    }
+}
+void palindromo(struct Pilha p){
+    struct Pilha inv;
+    int ver = 0;
+    iniciarPilha(&inv);
+    for(int i = 0; i <= p.topo; i++){
+        inserir(&inv, p.elem[p.topo - i]); 
+        if(inv.elem[i] == p.elem[i]){
+            ver = SIM;
+        }
+        else{
+            ver = NAO;
+            break;
+        }
+    }
+    if(ver == SIM){
+        printf("\n\nÉ um Palíndromo!!!");
+    }
+    else{
+        printf("\n\nNÃO é um Palíndromo.");
+    }
+}
+
+void pilhaPalindromo(struct Pilha p){
+    char vet[10];
+    int i = p.topo, ver;
+    for(int n = 0; n <= 10; n++){
+        vet[n] = 0;
+    }
+    for(int n = 0; n <= i; n++){
+        vet[n] = remover(&p);
+    }
+    for(int n = 0; n <= i; n++){
+        inserir(&p, vet[i - n]);
+        if(p.elem[n] == vet[n]){
+            ver = SIM;
+        }
+        else{
+            ver = NAO;
+            break;
+        }
+    }
+    if(ver == SIM){
+        printf("\n\nÉ um Palíndromo!!!");
+    }
+    else{
+        printf("\n\nNÃO é um Palíndromo.");
     }
 }

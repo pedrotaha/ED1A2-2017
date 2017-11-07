@@ -21,6 +21,8 @@ extern "C" {
     void listarElementos(struct Pilha);
     int inserir(struct Pilha*, char);
     char remover(struct Pilha*);
+    void palindromo(struct Pilha);
+    void pilhaPalindromo(struct Pilha);
     
 
 #ifdef __cplusplus
