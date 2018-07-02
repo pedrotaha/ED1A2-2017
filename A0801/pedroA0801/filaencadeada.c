@@ -200,12 +200,16 @@ void inserirListaCircular(){
 
 void removerListaCircular(){
     //removendo do começo:
+/*
     inicioA = novo3;
     free(nC1);
+*/
     //Remover o nó novo2 utilizado no inserir:
     nC1->prox = nC2;
     free(novo3);
     //Removendo do final:
+/*
     free(nC3);
     nC2->prox = inicioC;
+*/
 }
