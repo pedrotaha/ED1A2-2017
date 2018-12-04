@@ -33,6 +33,9 @@ int main(int argc, char** argv) {
     printf("\n========Removendo da Fila\n");
     remover(&minhaFila);
     listarElementos(minhaFila);
+    printf("INSERINDO MAIS UM");
+    inserir(&minhaFila, 'K');
+    listarElementos(minhaFila);
 
     return (EXIT_SUCCESS);
 }
